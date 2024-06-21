@@ -1,0 +1,15 @@
+static void Main(string[] args)
+{
+Console.WriteLine("Escreva o nome do produto, a quantidade do produto e o valor
+unitário: ");
+string nomep = Console.ReadLine();
+int qntp = int.Parse(Console.ReadLine());
+double valorU = double.Parse(Console.ReadLine());
+double valortot = qntp * valorU;
+Console.WriteLine($"O valor total do produto é: {valortot}");
+using (StreamWriter sw = new StreamWriter("c:\\temp\\listadcompra.txt"))
+{
+sw.WriteLine($"{nomep};{qntp};{valortot}");
+}
+Console.ReadKey();
+}
